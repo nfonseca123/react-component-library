@@ -3,11 +3,21 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/nfonseca123"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A react component library",
   "license": "ISC",
   "author": "Noah",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
   "scripts": {
     "test": "jest",
     "storybook": "storybook dev -p 6006",
@@ -53,7 +63,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@nfonseca123/react-component-library": "^0.0.3",
     "styled-components": "^6.1.15"
   }
 }
